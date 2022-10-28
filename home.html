@@ -253,24 +253,29 @@
     .fullbg{
         /* position: relative;*/
         /* top: 2rem; */
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
         margin-top: 5.4rem;
         background: maroon;
-        padding: 2rem 2rem;
+        padding: 1rem 1rem;
         z-index: 0;
     }
     .ycard{
-        display: inline-block;
+        display: block;
         position: relative;
         padding: 1rem 1rem;
         background:rgb(255, 247, 213);
         border-radius: 1rem;
-        box-shadow: 0.1rem 0.1rem 0.5rem 0.15rem rgb(255, 105, 105);
+        box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgb(255, 105, 105);
+        width: 100%;
         /* margin: 1rem 1rem; */
         /* margin-top: 1rem; */
     }
     .ycard:hover{
-        transform: scale(1.01);
-        box-shadow: 0.1rem 0.1rem 0.5rem 0.25rem rgb(255, 105, 105);
+        transform: scale(1.005);
+        box-shadow: 0.1rem 0.1rem 0.5rem 0.2rem rgb(255, 105, 105);
     }
     .question{
         position: relative;
@@ -279,6 +284,7 @@
         background: rgb(249, 225, 179);
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 1.3rem;
+        width: 80vw;
     }
     .firstblock{
         display: inline-block;
@@ -320,6 +326,7 @@
         background: rgb(255, 247, 213);
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: large;
+        width: 70vw;
     }
     .ans_firstblock{
         display: inline-block;
@@ -366,9 +373,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 0.4s;
+        transition: 0.5s;
         text-decoration: none;
         font-size: 1.3rem;
+    }
+
+    .post_answer:hover{
+        text-decoration: none;
+        color: aqua;
     }
 
     .input_answer {
@@ -428,6 +440,15 @@
             line-height: 0.5em;
             width: 99%;
         }
+        /* .question{
+            width: 70vw;
+        }
+        .answer{
+            width: 60vw;
+        } */
+        /* .input_answer{
+            width: 80%;
+        } */
     } 
 
 </style>
@@ -526,14 +547,11 @@
             <div class="ycard">
                 <div class="firstblock">
                     <img src="user img.png" class="card_user">
-                    <p class="card_name">name</p>
-                    <p class="ques_type">Technical</p>
-                </div>
-                
-                <p class="question">Hello, I have exercise where I should make the same text page using CSS.
-                    Unfortunately, after a lot of attempts and googling its still not working.
-                    Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
-                </p>
+                    <p class="card_name">Kushal</p>
+                    <p class="ques_type">General</p>
+                </div>  
+                <pre class="question">How to study the whole day and fool your friends that you aren't studying?
+                </pre>
                 <div class="div_ans">
                     <input class="input_answer" type="text" placeholder="Answer here...">
                     <a href="#" class="post_answer">
@@ -547,24 +565,20 @@
                     <div class="ans_ycard">
                         <div class="ans_firstblock">
                             <img src="user img.png" class="ans_card_user">
-                            <p class="ans_card_name">name</p>
+                            <p class="ans_card_name">Hitanshu</p>
                         </div>
-                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
-                            Unfortunately, after a lot of attempts and googling its still not working.
-                            Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
-                        </p>
+                        <pre class="answer">Who will know more than you?
+                        </pre>
                     </div>
                 </li>
                 <li>
                     <div class="ans_ycard">
                         <div class="ans_firstblock">
                             <img src="user img.png" class="ans_card_user">
-                            <p class="ans_card_name">name</p>
+                            <p class="ans_card_name">Yashkumar</p>
                         </div>
-                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
-                            Unfortunately, after a lot of attempts and googling its still not working.
-                            Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
-                        </p>
+                        <pre class="answer">Hahhhaaa
+                        </pre>
                     </div>
                 </li>
             </ul>
@@ -578,10 +592,9 @@
                         <p class="ques_type">Technical</p>
                     </div>
                     
-                    <p class="question">Hello, I have exercise where I should make the same text page using CSS.
-                        Unfortunately, after a lot of attempts and googling its still not working.
-                        Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
-                    </p>
+                    <pre class="question" cols="1">Hello, I have exercise where I should make the same text page using CSS.
+Unfortunately, after a lot of attempts and googling its still not working.
+                    </pre>
                     <div class="div_ans">
                         <input class="input_answer" type="text" placeholder="Type to search">
                         <a href="#" class="post_answer">
@@ -597,10 +610,10 @@
                             <img src="user img.png" class="ans_card_user">
                             <p class="ans_card_name">name</p>
                         </div>
-                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                        <pre class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
                             Unfortunately, after a lot of attempts and googling its still not working.
                             Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
-                        </p>
+                        </pre>
                     </div>
                 </li>
                 <li>
@@ -609,10 +622,10 @@
                             <img src="user img.png" class="ans_card_user">
                             <p class="ans_card_name">name</p>
                         </div>
-                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                        <pre class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
                             Unfortunately, after a lot of attempts and googling its still not working.
                             Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
-                        </p>
+                        </pre>
                     </div>
                 </li>
             </ul>
@@ -626,10 +639,10 @@
                         <p class="ques_type">Technical</p>
                     </div>
                     
-                    <p class="question">Hello, I have exercise where I should make the same text page using CSS.
+                    <pre class="question">Hello, I have exercise where I should make the same text page using CSS.
                         Unfortunately, after a lot of attempts and googling its still not working.
                         Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
-                    </p>
+                    </pre>
                     <div class="div_ans">
                         <input class="input_answer" type="text" placeholder="Type to search">
                         <a href="#" class="post_answer">
@@ -645,10 +658,10 @@
                             <img src="user img.png" class="ans_card_user">
                             <p class="ans_card_name">name</p>
                         </div>
-                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                        <pre class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
                             Unfortunately, after a lot of attempts and googling its still not working.
                             Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
-                        </p>
+                        </pre>
                     </div>
                 </li>
                 <li>
@@ -657,10 +670,10 @@
                             <img src="user img.png" class="ans_card_user">
                             <p class="ans_card_name">name</p>
                         </div>
-                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                        <pre class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
                             Unfortunately, after a lot of attempts and googling its still not working.
                             Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
-                        </p>
+                        </pre>
                     </div>
                 </li>
             </ul>
@@ -674,10 +687,8 @@
                         <p class="ques_type">Technical</p>
                     </div>
                     
-                    <p class="question">Hello, I have exercise where I should make the same text page using CSS.
-                        Unfortunately, after a lot of attempts and googling its still not working.
-                        Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
-                    </p>
+                    <pre class="question">Hello, I have exercise where I should make the same text page using CSS. Unfortunately, after a lot of attempts and googling its still not working. Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                    </pre>
                     <div class="div_ans">
                         <input class="input_answer" type="text" placeholder="Type to search">
                         <a href="#" class="post_answer">
@@ -693,10 +704,10 @@
                             <img src="user img.png" class="ans_card_user">
                             <p class="ans_card_name">name</p>
                         </div>
-                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                        <pre class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
                             Unfortunately, after a lot of attempts and googling its still not working.
                             Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
-                        </p>
+                        </pre>
                     </div>
                 </li>
                 <li>
@@ -705,10 +716,10 @@
                             <img src="user img.png" class="ans_card_user">
                             <p class="ans_card_name">name</p>
                         </div>
-                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                        <pre class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
                             Unfortunately, after a lot of attempts and googling its still not working.
                             Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
-                        </p>
+                        </pre>
                     </div>
                 </li>
             </ul>
