@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JigyAasa</title>
+    <!-- <link rel="stylesheet" href="home.css"> -->
+    <!-- <script src="hnav.js"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/e499e1a3c2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+        /* box-sizing: border-box; */
+        font-family: sans-serif;
+        /* color: white; */
+    }
+
+    .upna {
+        background: whitesmoke;
+        box-shadow: 0 25em 20em -20em rgba(252, 223, 0, 0.4);
+        height: 5em;
+        width: 100%;
+        z-index: 0;
+    }
+
+    nav.scroll {
+        top: 0px;
+    }
+
+    nav.scroll li {
+        color: black;
+    }
+
+    .searubox {
+        position: absolute;
+        top: 1vh;
+        left: 90vw;
+        transform: translate(-50%, -50%);
+        height: 3em;
+        border-radius: 20em;
+        padding: 1em;
+        background: rgb(40, 39, 39);
+        margin-top: 2rem;
+    }
+
+    .searubox:hover>.searutxt {
+        width: 12em; 
+        padding: 0 1.5em;
+    }
+
+    .searubox:hover>.searubtn {
+        background: rgb(234, 234, 234);
+    }
+
+    .searubtn {
+        color: chocolate;
+        float: right;
+        width: 0em;
+        height: -1em;
+        border-radius: 50%;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+    }
+
+    .searutxt {
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        color: rgb(255, 255, 255);
+        font-size: 1em;
+        transition: 0.4s;
+        line-height: 0.5em;
+        width: 0em;
+    }
+
+    .upper {
+        font-size: 2em;
+        color: rgb(10, 16, 43);
+        display: inline-flex;
+        position: relative;
+    }
+
+    div img {
+        width: 2em;
+        height: 2em;
+        margin-inline: 0.5em;
+    }
+
+    img.somaiya {
+        margin-top: 0.3em;
+        height: 4.5em;
+        width: 18em;
+    }
+
+    .jigu {
+    
+        margin-left: 18vw;
+        width: 3em;
+        height: 3em;
+        border-radius: 0.5em;
+        box-shadow: black;
+    }
+
+    h1 {
+        margin-top: 1vh;
+        background-image: linear-gradient(to right,
+                #dd1633,
+                #54b3d6 50%,
+                #000 50%);
+        background-size: 200% 100%;
+        background-position: -100%;
+        display: inline-block;
+        padding: 0 0;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.5s ease-in-out;
+    }
+
+    h1:before {
+        content: '';
+        background: #54b3d6;
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    h1:hover {
+        background-position: 0;
+    }
+
+    h1:hover::before {
+        width: 100%;
+    }
+
+    /* Menu in responsive */
+    .fa-bars-filter {
+        font-size: 2rem;
+        cursor: pointer;
+        color: black;
+        display: none;
+    }
+
+    .user1 {
+        width: 3em;
+        height: 3.5em;
+        border-radius: 50%;
+        /* margin-right: 10%; */
+        /* margin-top: 0.3em; */
+        /* margin-left: 10%; */
+        /* margin-left: 2rem; */
+        cursor: pointer;
+    }
+
+    .submanubox {
+        position: absolute;
+        top: 80%;
+        /* left: 2%; */
+        left: 1%;
+        width: 12em;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+
+    .submanubox.openmanu {
+        max-height: 26rem;
+        
+    }
+
+    .submanu {
+        background: #fff;
+        padding: 1em;
+        /* margin: 2.5em 3em; */
+    }
+
+    .userinfu {
+        display: flex;
+        align-items: center;
+    }
+
+    .userinfu h3 {
+        font-weight: 500;
+    }
+
+    .userinfu img {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        /* margin-right: 1em; */
+        /* margin-left: 100%; */
+    }
+
+    .submanu hr {
+        border: 0;
+        height: 1px;
+        width: 100%;
+        background: #ccc;
+        margin: 15px 0 10px;
+    }
+
+    .submanulink {
+        display: flex;
+        align-self: center;
+        text-decoration: none;
+        color: #525252;
+        margin: 12px 0;
+    }
+
+    .submanulink p {
+        width: 100%;
+    }
+
+    .submanulink span {
+        font-size: 1em;
+        transition: transform 0.5s;
+    }
+
+    .submanulink:hover span {
+        transform: translateX(5px);
+    }
+
+    .submanulink:hover p {
+        font-weight: 600;
+    }  
+
+    .buttno{
+        position: fixed;
+        top: 38rem;
+        left: 80rem;
+        z-index: 1;
+    }
+    .fullbg{
+        /* position: relative;*/
+        /* top: 2rem; */
+        margin-top: 5.4rem;
+        background: maroon;
+        padding: 2rem 2rem;
+        z-index: 0;
+    }
+    .ycard{
+        display: inline-block;
+        position: relative;
+        padding: 1rem 1rem;
+        background:rgb(255, 247, 213);
+        border-radius: 1rem;
+        box-shadow: 0.1rem 0.1rem 0.5rem 0.15rem rgb(255, 105, 105);
+        /* margin: 1rem 1rem; */
+        /* margin-top: 1rem; */
+    }
+    .ycard:hover{
+        transform: scale(1.01);
+        box-shadow: 0.1rem 0.1rem 0.5rem 0.25rem rgb(255, 105, 105);
+    }
+    .question{
+        position: relative;
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.5rem;
+        background: rgb(249, 225, 179);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.3rem;
+    }
+    .firstblock{
+        display: inline-block;
+    }
+    .card_user{
+        display: inline-block;
+        border-radius: 50%;
+    }
+    .card_name{
+        color: black;
+        font-weight: bold;
+        display: inline-block;
+    }
+    .ques_type{
+        color: white;
+        display: inline-block;
+        padding: 0.4rem;
+        background: red;
+        border-radius: 1rem;
+    }
+    .question_card_summary{
+        display: inline-block;
+        margin: 1rem 1rem;
+    }
+    .ans_ycard{
+        display: inline-block;
+        position: relative;
+        padding: 1rem 1rem;
+        background:rgb(228, 192, 125);
+        border-radius: 0.3rem;
+        box-shadow: 0.1rem 0.1rem 0.4rem 0.01rem rgb(255, 222, 222);
+        /* margin: 1rem 1rem; */
+        margin-top: 0.5rem;
+    }
+    .answer{
+        position: relative;
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.5rem;
+        background: rgb(255, 247, 213);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: large;
+    }
+    .ans_firstblock{
+        display: inline-block;
+    }
+    .ans_card_user{
+        display: inline-block;
+        border-radius: 50%;
+    }
+    .ans_card_name{
+        color: black;
+        font-weight: bold;
+        display: inline-block;
+    }
+    details ul li{
+        margin: 1rem 1rem; 
+        list-style: none;
+    }
+    .div_ans {
+        position: relative;
+        /* transform: translate(-50%, -50%); */
+        height: 3em;
+        border-radius: 20em;
+        background: rgb(40, 39, 39);
+        margin-top: 2rem;
+        padding: 1rem 1.6rem;
+    }
+
+    /* .div_ans:hover>.input_answer {
+        width: 12em;
+        padding: 0 1.5em;
+    } */
+
+    /* .searubox:hover>.post_answer {
+        background: rgb(234, 234, 234);
+    } */
+
+    .post_answer {
+        color: white;
+        float: right;
+        width: 0em;
+        /* height: -1em; */
+        border-radius: 50%;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        text-decoration: none;
+        font-size: 1.3rem;
+    }
+
+    .input_answer {
+        border: none;
+        background: none;
+        outline: none;
+        /* float: left; */
+        /* padding: 0 1.5em; */
+        color: rgb(255, 255, 255);
+        font-size: 1em;
+        transition: 0.4s;
+        line-height: 0.5em;
+        width: 99%;
+        /* width: 100%em; */
+    }
+    footer{
+        position: absolute;
+        background: whitesmoke;
+        /* margin-top: 5rem; */
+        width: 100%;
+    }
+    footer p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: maroon;
+        font-size: 2rem;
+        font-family: 'Anton', sans-serif;
+        padding: 1rem;
+    }
+    @media (max-width: 990px) {
+        /* .upna{
+            display: none;
+        }         */
+        .upp{
+            display: none;
+        }
+        .searubox{
+            left: 50%; 
+            width: 80%;
+        }
+        .fullbg{
+            margin-top: 5.4rem;
+        }
+
+        .searutxt {
+            color: rgb(255, 255, 255);
+            font-size: 1em;
+            transition: 0.4s;
+            line-height: 0.5em;
+            width: 99%;
+        }
+        .searubox:hover>.searutxt {
+            color: rgb(255, 255, 255);
+            font-size: 1em;
+            transition: 0.4s;
+            line-height: 0.5em;
+            width: 99%;
+        }
+    } 
+
+</style>
+
+<body>
+
+    <div class="upna">
+        <div class="upp">
+            <img src="kjsieit-logo.svg" class="somaiya" alt="....">
+            <a href="#"><img src="logo.jpg" class="jigu" alt="loading..."></a>
+            <a href="#">
+                <h1><span><strong>J</strong>igy<strong>A</strong>asa</span></h1>
+            </a>
+        </div>
+        <div class="searubox">
+            <input class="searutxt" type="text" placeholder="Type to search">
+            <a href="#" class="searubtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-size: 1.5rem;position: fixed;width: 100%;z-index: 100;">
+        <a class="navbar-brand" href="#" style="margin-left:1rem; font-weight: bolder;">JigyAasa</a>
+        <img src="user img.png" alt="..." class="navbar-brand user1" onclick="toggleMenu()">
+        <div class="submanubox" id="subManu">
+            <div class="submanu">
+                <div class="userinfu">
+                    <img src="user img.png" alt="C">
+                    <h3>Chachunder</h3>
+                </div>
+                <hr>
+
+                <a href="profile.html" class="submanulink">
+                    <i class="fa-solid fa-user"></i>
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="setting.html" class="submanulink">
+                    <i class="fa-sharp fa-solid fa-gear"></i>
+                    <p>Setting</p>
+                    <span>></span>
+                </a>
+                <a href="help.html" class="submanulink">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    <p>Help</p>
+                    <span>></span>
+                </a>
+                <a href="aboutus.html" class="submanulink">
+                    <i class="fa-solid fa-address-card"></i>
+                    <p>About Us</p>
+                    <span>></span>
+                </a>
+                <a href="login.html" class="submanulink">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <p>Log out</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 35%; z-index: 1;">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item" style="margin-left: 3rem;">
+                <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" style="margin-left: 3rem;">
+                <a class="nav-link" href="technical.html">Technical</a>
+            </li>
+            <li class="nav-item" style="margin-left: 3rem;">
+                <a class="nav-link" href="general.html">General</a>
+            </li>
+            <li class="nav-item" style="margin-left: 3rem;">
+                <a class="nav-link" href="askexpert.html">AskExpert</a>
+            </li>
+        </div>
+    </nav>
+    <div class="fullbg">
+        <!-- <div class="ycard">
+            <div class="firstblock">
+                <img src="user img.png" class="card_user">
+                <p class="card_name">name</p>
+            </div>
+            
+            <p class="question">Hello, I have exercise where I should make the same text page using CSS.
+                Unfortunately, after a lot of attempts and googling its still not working.
+                Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.
+            </p>
+            <a href="#" class="drop_ans_button">   
+                <i class="fa-solid fa-circle-chevron-down"></i>
+            </a>
+        </div> -->
+        <details class="show_answer">
+            <summary class="question_card_summary">
+            <div class="ycard">
+                <div class="firstblock">
+                    <img src="user img.png" class="card_user">
+                    <p class="card_name">name</p>
+                    <p class="ques_type">Technical</p>
+                </div>
+                
+                <p class="question">Hello, I have exercise where I should make the same text page using CSS.
+                    Unfortunately, after a lot of attempts and googling its still not working.
+                    Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                </p>
+                <div class="div_ans">
+                    <input class="input_answer" type="text" placeholder="Answer here...">
+                    <a href="#" class="post_answer">
+                        <i class="fa-sharp fa-solid fa-paper-plane"></i>
+                    </a>
+                </div>
+            </div>
+            </summary>
+            <ul>
+                <li>
+                    <div class="ans_ycard">
+                        <div class="ans_firstblock">
+                            <img src="user img.png" class="ans_card_user">
+                            <p class="ans_card_name">name</p>
+                        </div>
+                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                            Unfortunately, after a lot of attempts and googling its still not working.
+                            Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ans_ycard">
+                        <div class="ans_firstblock">
+                            <img src="user img.png" class="ans_card_user">
+                            <p class="ans_card_name">name</p>
+                        </div>
+                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                            Unfortunately, after a lot of attempts and googling its still not working.
+                            Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </details>
+        <details class="show_answer">
+            <summary class="question_card_summary">
+                <div class="ycard">
+                    <div class="firstblock">
+                        <img src="user img.png" class="card_user">
+                        <p class="card_name">name</p>
+                        <p class="ques_type">Technical</p>
+                    </div>
+                    
+                    <p class="question">Hello, I have exercise where I should make the same text page using CSS.
+                        Unfortunately, after a lot of attempts and googling its still not working.
+                        Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                    </p>
+                    <div class="div_ans">
+                        <input class="input_answer" type="text" placeholder="Type to search">
+                        <a href="#" class="post_answer">
+                            <i class="fa-sharp fa-solid fa-paper-plane"></i>
+                        </a>
+                    </div>
+                </div>
+            </summary>
+            <ul>
+                <li>
+                    <div class="ans_ycard">
+                        <div class="ans_firstblock">
+                            <img src="user img.png" class="ans_card_user">
+                            <p class="ans_card_name">name</p>
+                        </div>
+                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                            Unfortunately, after a lot of attempts and googling its still not working.
+                            Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ans_ycard">
+                        <div class="ans_firstblock">
+                            <img src="user img.png" class="ans_card_user">
+                            <p class="ans_card_name">name</p>
+                        </div>
+                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                            Unfortunately, after a lot of attempts and googling its still not working.
+                            Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </details>
+        <details class="show_answer">
+            <summary class="question_card_summary">
+                <div class="ycard">
+                    <div class="firstblock">
+                        <img src="user img.png" class="card_user">
+                        <p class="card_name">name</p>
+                        <p class="ques_type">Technical</p>
+                    </div>
+                    
+                    <p class="question">Hello, I have exercise where I should make the same text page using CSS.
+                        Unfortunately, after a lot of attempts and googling its still not working.
+                        Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                    </p>
+                    <div class="div_ans">
+                        <input class="input_answer" type="text" placeholder="Type to search">
+                        <a href="#" class="post_answer">
+                            <i class="fa-sharp fa-solid fa-paper-plane"></i>
+                        </a>
+                    </div>
+                </div>
+            </summary>
+            <ul>
+                <li>
+                    <div class="ans_ycard">
+                        <div class="ans_firstblock">
+                            <img src="user img.png" class="ans_card_user">
+                            <p class="ans_card_name">name</p>
+                        </div>
+                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                            Unfortunately, after a lot of attempts and googling its still not working.
+                            Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ans_ycard">
+                        <div class="ans_firstblock">
+                            <img src="user img.png" class="ans_card_user">
+                            <p class="ans_card_name">name</p>
+                        </div>
+                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                            Unfortunately, after a lot of attempts and googling its still not working.
+                            Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </details>
+        <details class="show_answer">
+            <summary class="question_card_summary">
+                <div class="ycard">
+                    <div class="firstblock">
+                        <img src="user img.png" class="card_user">
+                        <p class="card_name">name</p>
+                        <p class="ques_type">Technical</p>
+                    </div>
+                    
+                    <p class="question">Hello, I have exercise where I should make the same text page using CSS.
+                        Unfortunately, after a lot of attempts and googling its still not working.
+                        Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                    </p>
+                    <div class="div_ans">
+                        <input class="input_answer" type="text" placeholder="Type to search">
+                        <a href="#" class="post_answer">
+                            <i class="fa-sharp fa-solid fa-paper-plane"></i>
+                        </a>
+                    </div>
+                </div>
+            </summary>
+            <ul>
+                <li>
+                    <div class="ans_ycard">
+                        <div class="ans_firstblock">
+                            <img src="user img.png" class="ans_card_user">
+                            <p class="ans_card_name">name</p>
+                        </div>
+                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                            Unfortunately, after a lot of attempts and googling its still not working.
+                            Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ans_ycard">
+                        <div class="ans_firstblock">
+                            <img src="user img.png" class="ans_card_user">
+                            <p class="ans_card_name">name</p>
+                        </div>
+                        <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page using CSS.
+                            Unfortunately, after a lot of attempts and googling its still not working.
+                            Someone told me to use display: flex, but in this exercise I should be using only block,inline or inline-block.Unfortunately, after a lot of attempts and googling its still not working.Unfortunately, after a lot of attempts and googling its still not working.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </details>
+    </div>
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Post Question</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="outer">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput" class="form-label"><strong>Name</strong></label>
+                            <input type="text" class="form-control" id="exampleFormControlInput"
+                                placeholder="Your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput" class="form-label"><strong>Type</strong></label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>General</option>
+                                <option value="1">Technical</option>
+                                <option value="2">Ask Expert</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label"><strong>Question</strong></label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write you question..."
+                                rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttno">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            +
+        </button>
+    </div>
+    <footer>
+        <p>Thank you for visiting!</p>
+    </footer>
+
+    <script type="text/javascript">
+        let subMenu = document.getElementById("subManu");
+        const hello_user = document.getElementsByClassName("user1");
+
+        // document.onclick = function(e){
+        //     if(e.target.class !== user123 ){
+        //         subMenu.classList.remove("openmanu");
+        //     }
+        // }
+        function toggleMenu() {
+            subMenu.classList.toggle("openmanu");
+        }
+
+        
+
+        let nav = document.querySelector("nav");
+        window.addEventListener("scroll", function () {
+
+            const offset = window.pageYOffset;
+
+            if (offset > 60) {
+                nav.classList.add("scroll");
+            }
+            else {
+                nav.classList.remove("scroll");
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e499e1a3c2.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

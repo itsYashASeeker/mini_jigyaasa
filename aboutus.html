@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/e499e1a3c2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+        /* box-sizing: border-box; */
+        font-family: sans-serif;
+        /* color: white; */
+    }
+
+    .upna {
+        background: whitesmoke;
+        box-shadow: 0 25em 20em -20em rgba(252, 223, 0, 0.4);
+        height: 5em;
+        width: 100%;
+        z-index: 0;
+    }
+
+    nav.scroll {
+        top: 0px;
+    }
+
+    nav.scroll li {
+        color: black;
+    }
+
+    .searubox {
+        position: absolute;
+        top: 1vh;
+        left: 90vw;
+        transform: translate(-50%, -50%);
+        height: 3em;
+        border-radius: 20em;
+        padding: 1em;
+        background: rgb(40, 39, 39);
+        margin-top: 2rem;
+    }
+
+    .searubox:hover>.searutxt {
+        width: 12em;
+        padding: 0 1.5em;
+    }
+
+    .searubox:hover>.searubtn {
+        background: rgb(234, 234, 234);
+    }
+
+    .searubtn {
+        color: chocolate;
+        float: right;
+        width: 0em;
+        height: -1em;
+        border-radius: 50%;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+    }
+
+    .searutxt {
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        color: rgb(255, 255, 255);
+        font-size: 1em;
+        transition: 0.4s;
+        line-height: 0.5em;
+        width: 0em;
+    }
+
+    .upper {
+        font-size: 2em;
+        color: rgb(10, 16, 43);
+        display: inline-flex;
+        position: relative;
+    }
+
+    div img {
+        width: 2em;
+        height: 2em;
+        margin-inline: 0.5em;
+    }
+
+    img.somaiya {
+        margin-top: 0.3em;
+        height: 4.5em;
+        width: 18em;
+    }
+
+    .jigu {
+    
+        margin-left: 18vw;
+        width: 3em;
+        height: 3em;
+        border-radius: 0.5em;
+        box-shadow: black;
+    }
+
+    h1 {
+        margin-top: 1vh;
+        background-image: linear-gradient(to right,
+                #dd1633,
+                #54b3d6 50%,
+                #000 50%);
+        background-size: 200% 100%;
+        background-position: -100%;
+        display: inline-block;
+        padding: 0 0;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.5s ease-in-out;
+    }
+
+    h1:before {
+        content: '';
+        background: #54b3d6;
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    h1:hover {
+        background-position: 0;
+    }
+
+    h1:hover::before {
+        width: 100%;
+    }
+
+    
+
+    .buttno{
+        position: fixed;
+        top: 38rem;
+        left: 80rem;
+        z-index: 1;
+    }
+    .fullbg{
+        /* position: relative;*/
+        /* top: 2rem; */
+        margin-top: 5.4rem;
+        background: maroon;
+        padding: 2rem 2rem;
+        z-index: 0;
+    }
+    .dev_card{
+        display: inline-block;
+        position: relative;
+        background: white;
+        border: 0.2rem solid maroon;
+        border-radius: 2rem;
+        box-shadow: 0.1rem 0.1rem 0.5rem 0.3rem rgb(255, 105, 105); 
+        margin-left: 2.9rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        padding: 1rem;
+        width: 16rem;
+        z-index: 0;
+    }
+    .dev_card:hover{
+        position: relative;
+        transform: scale(1.07);
+        background: white;
+        box-shadow: 0.1rem 0.1rem 0.5rem 0.7rem rgb(255, 105, 105);
+        z-index: 0;
+    }
+    .dev_name{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        font-weight: bold;
+        color: rgb(55, 32, 0);
+    }
+    .dev_img{
+        display: flex;
+        align-items: center;
+        width: 12.9rem;
+        border-radius: 5%;
+        height: auto; 
+    }
+    .dev_desc{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0.5rem;
+        color: rgb(55, 32, 0);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: large;
+    }
+    .desc1{
+        font-family: 'Rubik', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: white;
+    }
+    footer{
+        position: absolute;
+        background: whitesmoke;
+        /* margin-top: 5rem; */
+        width: 100%;
+    }
+    footer p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: maroon;
+        font-size: 2rem;
+        font-family: 'Anton', sans-serif;
+        padding: 1rem;
+    }
+    .user1 {
+        width: 3em;
+        height: 3.5em;
+        border-radius: 50%;
+        /* margin-right: 10%; */
+        /* margin-top: 0.3em; */
+        /* margin-left: 10%; */
+        /* margin-left: 2rem; */
+        cursor: pointer;
+    }
+
+    .submanubox {
+        position: absolute;
+        top: 80%;
+        /* left: 2%; */
+        left: 1%;
+        width: 12em;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+
+    .submanubox.openmanu {
+        max-height: 26rem;
+    }
+
+    .submanu {
+        background: #fff;
+        padding: 1em;
+        /* margin: 2.5em 3em; */
+    }
+
+    .userinfu {
+        display: flex;
+        align-items: center;
+    }
+
+    .userinfu h3 {
+        font-weight: 500;
+    }
+
+    .userinfu img {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        /* margin-right: 1em; */
+        /* margin-left: 100%; */
+    }
+
+    .submanu hr {
+        border: 0;
+        height: 1px;
+        width: 100%;
+        background: #ccc;
+        margin: 15px 0 10px;
+    }
+
+    .submanulink {
+        display: flex;
+        align-self: center;
+        text-decoration: none;
+        color: #525252;
+        margin: 12px 0;
+    }
+
+    .submanulink p {
+        width: 100%;
+    }
+
+    .submanulink span {
+        font-size: 1em;
+        transition: transform 0.5s;
+    }
+
+    .submanulink:hover span {
+        transform: translateX(5px);
+    }
+
+    .submanulink:hover p {
+        font-weight: 600;
+    }
+
+    @media (max-width: 990px) {
+        /* .upna{
+            display: none;
+        }         */
+        .upp{
+            display: none;
+        }
+        .searubox{
+            left: 50%; 
+            width: 80%;
+        }
+        .fullbg{
+            margin-top: 5.4rem;
+        }
+        .searutxt {
+            color: rgb(255, 255, 255);
+            font-size: 1em;
+            transition: 0.4s;
+            line-height: 0.5em;
+            width: 99%;
+        }
+        .searubox:hover>.searutxt {
+            color: rgb(255, 255, 255);
+            font-size: 1em;
+            transition: 0.4s;
+            line-height: 0.5em;
+            width: 99%;
+        }
+    }
+
+</style>
+<body>
+    <div class="upna">
+        <div class="upp">
+            <img src="kjsieit-logo.svg" class="somaiya" alt="....">
+            <a href="#"><img src="logo.jpg" class="jigu" alt="loading..."></a>
+            <a href="#">
+                <h1><span><strong>J</strong>igy<strong>A</strong>asa</span></h1>
+            </a>
+        </div>
+        <div class="searubox">
+            <input class="searutxt" type="text" placeholder="Type to search">
+            <a href="#" class="searubtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-size: 1.5rem;position: fixed;width: 100%;z-index: 100;">
+        <a class="navbar-brand" href="#" style="margin-left:1rem; font-weight: bolder;">JigyAasa</a>
+        <img src="user img.png" alt="..." class="navbar-brand user1" onclick="toggleMenu()">
+        <div class="submanubox" id="subManu">
+            <div class="submanu">
+                <div class="userinfu">
+                    <img src="user img.png" alt="C">
+                    <h3>Chachunder</h3>
+                </div>
+                <hr>
+
+                <a href="profile.html" class="submanulink">
+                    <i class="fa-solid fa-user"></i>
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="setting.html" class="submanulink">
+                    <i class="fa-sharp fa-solid fa-gear"></i>
+                    <p>Setting</p>
+                    <span>></span>
+                </a>
+                <a href="help.html" class="submanulink">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    <p>Help</p>
+                    <span>></span>
+                </a>
+                <a href="aboutus.html" class="submanulink">
+                    <i class="fa-solid fa-address-card"></i>
+                    <p>About Us</p>
+                    <span>></span>
+                </a>
+                <a href="login.html" class="submanulink">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <p>Log out</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 35%; z-index: 1;">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item" style="margin-left: 3rem;">
+            <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" style="margin-left: 3rem;">
+            <a class="nav-link" href="technical.html">Technical</a>
+        </li>
+        <li class="nav-item" style="margin-left: 3rem;">
+            <a class="nav-link" href="general.html">General</a>
+        </li>
+        <li class="nav-item" style="margin-left: 3rem;">
+            <a class="nav-link" href="askexpert.html">AskExpert</a>
+        </li>
+    </div>
+    </nav>
+    
+    <div class="fullbg">
+        <p class="desc1">Hello, we are B.Tech Computer Science students currently in Second Year, trying our best to provide you with the most user friendly doubt solver website!!</p>
+        <div class="dev_card yash">
+            <p class="dev_name">Yash Chauhan</p>
+            <img src="yash.jpg" class="dev_img">
+            <p class="dev_desc">This is description of me! Please don't judge me!</p>
+        </div>
+        <div class="dev_card">
+            <p class="dev_name">Yashkumar Dubey</p>
+            <img src="yashkumar.jpg" class="dev_img">
+            <p class="dev_desc">This is description of me! Please don't judge me!</p>
+        </div>
+        <div class="dev_card">
+            <p class="dev_name">Hitanshu Gandhi</p>
+            <img src="hitanshu.jpg" class="dev_img">
+            <p class="dev_desc">This is description of me! Please don't judge me!</p>
+        </div>
+        <div class="dev_card">
+            <p class="dev_name">Kushal Harsora</p>
+            <img src="kushal.jpg" class="dev_img">
+            <p class="dev_desc">This is description of me! Please don't judge me!</p>
+        </div>
+    </div>
+    <footer>
+        <p>Thank you for visiting!</p>
+    </footer>
+    <script type="text/javascript">
+        let subMenu = document.getElementById("subManu");
+
+        function toggleMenu() {
+            subMenu.classList.toggle("openmanu");
+        }
+
+        let nav = document.querySelector("nav");
+        window.addEventListener("scroll", function () {
+
+            const offset = window.pageYOffset;
+
+            if (offset > 60) {
+                nav.classList.add("scroll");
+            }
+            else {
+                nav.classList.remove("scroll");
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e499e1a3c2.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
