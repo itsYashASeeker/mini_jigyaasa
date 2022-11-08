@@ -7,7 +7,7 @@ var iycard = document.getElementById("idycard");
 var iquestion = document.getElementById("idquestion");
 var ians_ycard = document.getElementById("idans_ycard");
 var ianswer = document.getElementById("idanswer");
-
+localStorage.setItem("lbooltheme","false");
 
 function toggleMenu() {
     subMenu.classList.toggle("openmanu");
