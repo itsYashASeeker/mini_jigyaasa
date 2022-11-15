@@ -4,12 +4,11 @@ var ifullbg = document.getElementById("idfullbg");
 var inav = document.getElementById("idnav");
 var ifullbg = document.getElementById("idfullbg");
 var iycard = document.getElementById("idycard");
-var iquestion = document.getElementById("idquestion");
-var ians_ycard = document.getElementById("idans_ycard");
-var ianswer = document.getElementById("idanswer");
+var iquestion = document.querySelectorAll("#idquestion");
+var ians_ycard = document.querySelectorAll("#idans_ycard");
+var ianswer = document.querySelectorAll("#idanswer");
 // localStorage.setItem("lbooltheme","false");
-
-
+var whooshcard = document.querySelectorAll("#idycard");
 
 // Question card hover
 
@@ -18,8 +17,8 @@ function whooshgo(){
     whoosh.play();
 }
 
-var whooshcard = document.querySelectorAll("#idfullbg");
 
+console.log(whooshcard);
 for(var i=0; i<whooshcard.length;i++)
 {
     console.log(whooshcard[i]);
@@ -50,20 +49,48 @@ function changetheme(){
         inav.classList.remove("blacknav");
         inav.classList.remove("navbar-dark");
         ifullbg.classList.remove("blackfullbg");
-        iycard.classList.remove("blackycard");
-        iquestion.classList.remove("blackquestion");
-        ians_ycard.classList.remove("blackans_ycard");
-        ianswer.classList.remove("blackanswer");
+        for(var i=0;i<whooshcard.length;i++)
+        {
+            whooshcard[i].classList.remove("blackycard");
+        }
+        for(var j=0;j<iquestion.length;j++)
+        {
+            iquestion[j].classList.remove("blackquestion");
+        }
+        for(var k=0;k<ians_ycard;k++)
+        {
+            ians_ycard[i].classList.remove("blackans_ycard");
+        }
+        for(var l=0;l<ianswer.length;l++)
+        {
+            ianswer[l].classList.remove("blackanswer");
+        }
         localStorage.setItem("lbooltheme","false");
     } 
     else{
         inav.classList.add("blacknav");
         inav.classList.add("navbar-dark");
         ifullbg.classList.add("blackfullbg");
-        iycard.classList.add("blackycard");
-        iquestion.classList.add("blackquestion");
-        ians_ycard.classList.add("blackans_ycard");
-        ianswer.classList.add("blackanswer");
+        for(var i=0;i<whooshcard.length;i++)
+        {
+            
+            whooshcard[i].classList.add("blackycard");
+        }
+        for(var j=0;j<iquestion.length;j++)
+        {
+            iquestion[j].classList.add("blackquestion");
+        }
+        for(var k=0;k<ians_ycard.length;k++)
+        {
+            console.log("1");
+            ians_ycard[k].classList.add("blackans_ycard");
+        }
+        for(var l=0;l<ianswer.length;l++)
+        {
+            console.log("1");
+            ianswer[l].classList.add("blackanswer");
+        }
+        
         localStorage.setItem("lbooltheme","true");
     }
 }

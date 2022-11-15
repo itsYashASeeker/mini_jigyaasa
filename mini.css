@@ -515,7 +515,7 @@ h1:hover::before {
     border-radius: 1rem;
     box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgb(255, 105, 105) ;
     width: 100%;
-    transition: all ease-out 0.2s;
+    transition: box-shadow ease-out 0.5s;
     /* margin-top: 1rem; */
 }
 .blackycard{
@@ -525,11 +525,11 @@ h1:hover::before {
 }
 .ycard:hover{
     transform: scale(1.005);
-    box-shadow: 0.1rem 0.1rem 0.5rem 0.2rem rgb(255, 105, 105);
+    box-shadow: 0rem 0rem 0.5rem 0.3rem rgb(255, 105, 105);
 }
 .blackycard:hover{
     transform: scale(1.005);
-    box-shadow: 0.1rem 0.1rem 0.5rem 0.2rem rgba(84, 238, 255,0.500);
+    box-shadow: 0rem 0rem 0.5rem 0.3rem rgba(84, 238, 255,0.500);
 }
 .question{
     position: relative;

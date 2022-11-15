@@ -1,0 +1,91 @@
+body{
+    margin: 0px 0px;
+}
+
+.ynav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: wheat;
+    width: 100%;
+    padding: 20px;
+    top: 0;
+    transition: 0.4s;
+    z-index: 99;
+    position: fixed;
+    overflow: hidden;
+    height: 80px;
+}
+
+.navcontent1{
+    position: absolute;
+    list-style-type: none;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    left: 150px;
+    font-size: 20px;   
+}
+
+.navcontent1 li{
+    float: left;
+}
+
+.navcontent1 a{
+    display: block;
+    padding: 5px;
+    text-decoration:none;
+    color: darkslategray;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.navcontent1 a:hover{
+    background-color: darkslategray;
+    color: wheat;
+}
+
+.logoimg{
+    position: absolute;
+    left: 50px;
+    /* margin-right: 20px; */
+    height: 80px;
+}
+
+.navcontent2{
+    list-style-type: none;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    left: 980px;
+    font-size: 18px;
+    position: absolute;
+}
+
+.navcontent2 li{
+    float: left;
+}
+
+.navcontent2 a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color:rgb(207, 127, 7);
+}
+
+@media screen and (max-width: 580px) {
+    .ynav {
+      padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+    }
+    .ynav a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .navcontent1 {
+      float: none;
+    }
+    .navcontent2 {
+        float: none;
+      }
+  }
