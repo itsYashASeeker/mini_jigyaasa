@@ -13,17 +13,18 @@ var whooshcard = document.querySelectorAll("#idycard");
 // Question card hover
 
 function whooshgo(){
-    var whoosh = new Audio("whoosh.mp3");
-    whoosh.play();
+    // var whoosh = new Audio("whoosh.mp3");
+    // whoosh.play();
+    console.log("whoosh");
 }
 
 
 console.log(whooshcard);
-for(var i=0; i<whooshcard.length;i++)
-{
-    console.log(whooshcard[i]);
-    whooshcard[i].addEventListener("mouseover",whooshgo);
-}
+// for(var i=0; i<whooshcard.length;i++)
+// {
+//     console.log(whooshcard[i]);
+//     whooshcard[i].addEventListener("mouseover",whooshgo);
+// }
 
 
 // Question card hover end
@@ -59,7 +60,7 @@ function changetheme(){
         }
         for(var k=0;k<ians_ycard;k++)
         {
-            ians_ycard[i].classList.remove("blackans_ycard");
+            ians_ycard[k].classList.remove("blackans_ycard");
         }
         for(var l=0;l<ianswer.length;l++)
         {
