@@ -7,7 +7,27 @@ var iycard = document.getElementById("idycard");
 var iquestion = document.getElementById("idquestion");
 var ians_ycard = document.getElementById("idans_ycard");
 var ianswer = document.getElementById("idanswer");
-localStorage.setItem("lbooltheme","false");
+// localStorage.setItem("lbooltheme","false");
+
+
+
+// Question card hover
+
+function whooshgo(){
+    var whoosh = new Audio("whoosh.mp3");
+    whoosh.play();
+}
+
+var whooshcard = document.querySelectorAll("#idfullbg");
+
+for(var i=0; i<whooshcard.length;i++)
+{
+    console.log(whooshcard[i]);
+    whooshcard[i].addEventListener("mouseover",whooshgo);
+}
+
+
+// Question card hover end
 
 function toggleMenu() {
     subMenu.classList.toggle("openmanu");
@@ -26,17 +46,7 @@ function handlereload(){
 
 
 function changetheme(){
-    if(localStorage.getItem("lbooltheme")==="false"){
-        inav.classList.add("blacknav");
-        inav.classList.add("navbar-dark");
-        ifullbg.classList.add("blackfullbg");
-        iycard.classList.add("blackycard");
-        iquestion.classList.add("blackquestion");
-        ians_ycard.classList.add("blackans_ycard");
-        ianswer.classList.add("blackanswer");
-        localStorage.setItem("lbooltheme","true");
-    }
-    else if(localStorage.getItem("lbooltheme")==="true"){
+    if(localStorage.getItem("lbooltheme")==="true"){
         inav.classList.remove("blacknav");
         inav.classList.remove("navbar-dark");
         ifullbg.classList.remove("blackfullbg");
@@ -46,6 +56,16 @@ function changetheme(){
         ianswer.classList.remove("blackanswer");
         localStorage.setItem("lbooltheme","false");
     } 
+    else{
+        inav.classList.add("blacknav");
+        inav.classList.add("navbar-dark");
+        ifullbg.classList.add("blackfullbg");
+        iycard.classList.add("blackycard");
+        iquestion.classList.add("blackquestion");
+        ians_ycard.classList.add("blackans_ycard");
+        ianswer.classList.add("blackanswer");
+        localStorage.setItem("lbooltheme","true");
+    }
 }
 
 window.onload = handlereload;
