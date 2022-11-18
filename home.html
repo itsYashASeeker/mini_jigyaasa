@@ -25,21 +25,25 @@
 
     <div class="upna">
         <div class="upp">
-            <img src="kjsieit-logo.svg" class="somaiya" alt="....">
             <a href="#"><img src="logo.jpg" class="jigu" alt="loading..."></a>
+            <img src="kjsieit-logo.svg" class="somaiya" alt="....">
+            
             <a href="#">
                 <h1><span><strong>J</strong>igy<strong>A</strong>asa</span></h1>
             </a>
         </div>
         <div class="searubox">
-            <input class="searutxt" type="text" placeholder="Type to search">
-            <a href="#" class="searubtn">
+            <input class="searutxt" type="text" placeholder="Type to search" name="search" id="search">
+            <!-- <a class="searubtn" >
                 <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
+            </a> -->
+            <button type="submit" class="searubtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
         </div>
     </div>
     <nav id="idnav" class="navbar navbar-expand-lg navbar-light" style="font-size: 1.5rem;position: fixed;width: 100%;z-index: 100;">
-        <img src="user img.png" alt="..." class="navbar-brand user1" onclick="toggleMenu()">
+        <button id="idbuttonuser1" class="buttonuser1"><img src="user img.png" alt="..." class="navbar-brand user1" ></button>
         
         <a class="navbar-brand" href="#" style="margin-left:1rem; font-weight: bolder;">JigyAasa</a>
         
@@ -51,27 +55,27 @@
                 </div>
                 <hr>
 
-                <a href="profile.html" class="submanulink">
+                <a id="idsubmanulink" href="profile.html" class="submanulink">
                     <i class="fa-solid fa-user"></i>
                     <p>Edit Profile</p>
                     <span>></span>
                 </a>
-                <a href="setting.html" class="submanulink">
+                <a id="idsubmanulink" href="setting.html" class="submanulink">
                     <i class="fa-sharp fa-solid fa-gear"></i>
                     <p>Setting</p>
                     <span>></span>
                 </a>
-                <a href="help.html" class="submanulink">
+                <a id="idsubmanulink" href="help.html" class="submanulink">
                     <i class="fa-solid fa-handshake-angle"></i>
                     <p>Help</p>
                     <span>></span>
                 </a>
-                <a href="aboutus.html" class="submanulink">
+                <a id="idsubmanulink" href="aboutus.html" class="submanulink">
                     <i class="fa-solid fa-address-card"></i>
                     <p>About Us</p>
                     <span>></span>
                 </a>
-                <a href="login.html" class="submanulink">
+                <a id="idsubmanulink" href="login.html" class="submanulink">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <p>Log out</p>
                     <span>></span>
@@ -82,7 +86,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent" style="z-index: 1;">
-            <ul class="navbar-nav ml-auto jnav_contents">
+            <ul id="idnavul" class="navbar-nav ml-auto navul">
             <li class="nav-item" style="margin-left: 3rem;">
                 <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
             </li>
@@ -124,7 +128,11 @@
                             <img src="user img.png" class="ans_card_user">
                             <p class="ans_card_name">Hitanshu</p>
                         </div>
-                        <pre id="idanswer" class="answer">Who will know more than you?
+                        <pre id="idanswer" class="answer">.blackans_ycard{
+                            background: white;
+                            color: black;
+                            box-shadow: 0rem 0rem 0.4rem 0.1rem rgba(84, 238, 255,0.500);
+                        }
                         </pre>
                     </div>
                 </li>
@@ -302,8 +310,9 @@ Unfortunately, after a lot of attempts and googling its still not working.
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label"><strong>Question</strong></label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write you question..."
-                                rows="3"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write your question..."
+                            rows="3"></textarea>
+                            
                         </div>
                     </div>
                 </div>
@@ -319,10 +328,30 @@ Unfortunately, after a lot of attempts and googling its still not working.
             +
         </button>
     </div>
-    <footer>
-        <pre>Guided by: Jyoti Wadmare
-            Developed by: Yashkumare Dubey, Yash Chauhan, Hitanshu Gandhi, Kushal harsora
-        </pre>
+    <footer id="idfooter" >
+        <div id="idfooter_desc3" class="footer_desc3 ">
+            <img src="kjsieit-logo.svg" class="footer_desc31">
+            <p class="footer_desc32"><a href="https://kjsieit.somaiya.edu.in/en/programme/computer-engineering" target="_blank">Computer Engineering Department.</a></p>
+        </div>
+        <div class="footer_desc">
+            <p id="idfooter_desc1" class="footer_desc1 ">
+                <span>Guided by:</span>
+                <span><a href="#">Jyoti Wadmare </a></span>        
+            </p>
+            <!-- <p class="footer_desc1">
+                Developed by:    
+            </p> -->
+            <div id="idfooter_desc12" class="footer_desc12 ">
+                <p><a href="https://www.linkedin.com/in/yashkumar-dubey-716933222" target="_blank">Yashkumar Dubey<i class="fa-brands fa-linkedin"></i></a></p>
+                <p><a href="#">Hitanshu Gandhi<i class="fa-brands fa-linkedin"></i></a></p>
+                <p><a href="#">Kushal Harsora<i class="fa-brands fa-linkedin"></i></a></p>
+                <p><a href="https://www.linkedin.com/in/yash-chauhan-180031203/" target="_blank">Yash Chauhan<i class="fa-brands fa-linkedin"></i></a></p>
+            </div>
+            <div class="footer_desc2">
+                <img id="ideinstein" src="einstein.jpg" class="footer_desc2_einstein" onmouseover="handle_einstein()">
+                <p id="idfooter_desc21" class="footer_desc21 ">"The important thing is not to stop questioning"</p>
+            </div>
+        </div>   
     </footer>
 
     
